@@ -20,7 +20,8 @@
   "homepage": "https://github.com/bukolabisuga/MyDiary#readme",
   "dependencies": {
     "body-parser": "*",
-    "express": "*"
+    "express": "*",
+    "travis": "^0.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
