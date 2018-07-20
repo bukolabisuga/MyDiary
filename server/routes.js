@@ -4,6 +4,8 @@ import EntryController from './controllers/EntryController';
 
 const appRouter = Router();
 
+appRouter.get('/', (req, res) => res.send('Welcome to MyDiary API End Points!'));
+
 appRouter.get('/api/v1/entries', EntryController.getEntries);
 
 appRouter.get('/api/v1/entries/:id', EntryController.getEntry);

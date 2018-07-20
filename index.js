@@ -9,8 +9,6 @@ const port = process.env.PORT || 9999;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(path.join(__dirname, 'UI')));
-
 app.get('/', (req, res) => res.send('Bukola is one step closer!'));
 
 app.use('/', appRouter);
