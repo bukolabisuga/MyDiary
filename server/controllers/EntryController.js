@@ -14,7 +14,6 @@ class EntryController {
 
   static getEntry(req, res) {
     const entryToModify = entries.find(e => e.id === parseInt(req.params.id, 10));
-    console.log(req.params);
     if (!entryToModify || entryToModify === undefined) return res.status(404).json({ error: 'The entry you requested for must have been removed or have not been created' });
     res.status(200).json({ success: 'success', entry: entryToModify });
   }
