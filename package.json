@@ -21,12 +21,9 @@
   "dependencies": {
     "body-parser": "*",
     "express": "*",
-<<<<<<< HEAD
-    "travis": "^0.1.1"
-=======
+    "travis": "^0.1.1",
     "babel-core": "*",
     "babel-register": "*"
->>>>>>> e381f7a8baa67e1983eac28afe5061db40a9fac2
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
