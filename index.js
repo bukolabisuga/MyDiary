@@ -9,7 +9,7 @@ const port = process.env.PORT || 9999;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => res.send('Bukola is one step closer!'));
+app.get('/', (req, res) => res.send('MyDiary endpoints are hosted here!'));
 
 app.use('/', appRouter);
 

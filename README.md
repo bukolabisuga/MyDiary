@@ -5,5 +5,8 @@
 # MyDiary
 An easy-to-use personal diary for everyone
 
-# Link
+# UI
 Checkout the UI template [here](https://bukolabisuga.github.io/MyDiary/UI)
+
+# API Endpoints
+Checkout the API endpoints [here](http://mydiaryy.herokuapp.com/)
