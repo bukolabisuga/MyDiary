@@ -13,7 +13,7 @@ const entries = [
 appRouter.get('/', (req, res) => res.send('Welcome to MyDiary API End Points!'));
 
 appRouter.get('/api/v1/entries', (req, res) => res.status(200).json({
-  success: 'success', message: 'Query successful',
+  success: 'success', message: 'Query successful', entry: entries,
 }));
 
 appRouter.get('/api/v1/entries/:id', (req, res) => {
