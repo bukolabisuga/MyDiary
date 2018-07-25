@@ -20,19 +20,20 @@ appRouter.get('/api/v1/entries/:id', (request, response) => {
   const entryToGet = entries.find(e => e.id === parseInt(request.params.id, 10));
   if (!entryToGet || entryToGet === undefined) {
     return response.status(404).json({
-      error: 'The entry you requestuested for must have been removed or have not been created',
+      error: 'The entry you requested for must have been removed or has not been created',
     });
   }
-  response.status(200).json({ success: 'success', entry: entryToGet });
+  response.status(200).json({ success: 'success', message: 'Query successful', entry: entryToGet });
 });
 
 appRouter.post('/api/v1/entries', (request, response) => {
-  if (!request.body.title) return response.status(400).json({ error: 'title must be presponseent' })
-  if (!request.body.body) return response.status(400).json({ error: 'body must be presponseent' })
+  if (!request.body.title || !request.body.body) {
+    return response.status(400).json({ error: 'title and/or body must be present' })
+  }
 
   const entryToCreate = new Entry(entries.length + 1, request.body.title, request.body.body);
   entries.push(entryToCreate);
-  response.status(200).json({ success: 'success', entries });
+  response.status(200).json({ success: 'success', message: 'Query successful', entry: entries });
 });
 
 appRouter.put('/api/v1/entries/:id', (request, response) => {
@@ -46,7 +47,7 @@ appRouter.put('/api/v1/entries/:id', (request, response) => {
   entryToUpdate.title = request.body.title;
   entryToUpdate.body = request.body.body;
 
-  response.status(200).json({ success: 'success', entry: entryToUpdate });
+  response.status(200).json({ success: 'success', message: 'Query successful', entry: entryToUpdate });
 });
 
 appRouter.delete('/api/v1/entries/:id', (request, response) => {
@@ -59,7 +60,7 @@ appRouter.delete('/api/v1/entries/:id', (request, response) => {
 
   entries.pop(entryToDelete);
   response.status(200).json({
-    success: 'successfully deleted', entries,
+    success: 'success', message: 'Query successful', entry: entries,
   });
 });
 
