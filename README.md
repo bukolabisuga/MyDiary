@@ -5,8 +5,36 @@
 # MyDiary
 An easy-to-use personal diary for everyone
 
-# UI
-Checkout the UI template [here](https://bukolabisuga.github.io/MyDiary/UI)
+### UI
+View the UI templates [here](https://bukolabisuga.github.io/MyDiary/UI)
 
-# API Endpoints
-Checkout the API endpoints [here](http://mydiaryy.herokuapp.com/)
+### API Endpoints
+View the API endpoints [here](http://mydiaryy.herokuapp.com)
+#### Accessible Endpoints
+| Endpoint                              | Functionality                                     |
+| ------------------------------------- | ------------------------------------------------- |
+| GET    /api/v1/entries                | Fetch all entries                                 |
+| POST   /api/v1/entries                | Add an entry                                      |
+| GET    /api/v1/entries/:entry_id      | Fetch an entry                                    |
+| PUT    /api/v1/entries/:entry_id      | Update an entry                                   |
+| DELETE /api/v1/entries/:entry_id      | Delete an entry                                   |
+
+
+### Built With
+* [NodeJS](https://nodejs.org) - Runtime Environment
+* [ExpressJS](https://expressjs.com/en/api.html) - Web Application Framework
+* [npm](https://www.npm.com) - Dependency Manager
+
+### Supporting Packages
+* [ESLint](https://eslint.org) - Linter tool 
+* [Babel](https://babel.io) - A compiler for next generation JavaScript
+
+### Test Tools
+* [Mocha](https://mochajs.org) - JavaScript Testing Framework
+* [Chai](https://chaijs.com) - TDD/BDD Assertion Library for Node
+
+### License
+* This project is licensed under the MIT License
+
+### Author
+* Olubukola Bisuga
