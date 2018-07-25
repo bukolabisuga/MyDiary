@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MyDiary - A daily journal just for you!</title>
+    <!-- css stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="./assets/css/pre-styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="fixed-top">
+        <a href="./index.html">MyDiary</a>
+        <a class="btn btn-outline-blue" href="./index.html">Logout</a>
+    </nav>
+
+    <section class="single_entry">
+        <div>
+            <h3>View &amp; Edit Entry</h3>
+        </div>
+        <div class="white_card">
+            <div class="single_entry--header">
+                <h4>My mum's 50th birthday</h4>
+                <p>11-07-2018 At 8:00am</p>
+            </div>
+            <div class="single_entry--body">
+                <form class="edit_form">
+                    <div class="form_group">
+                        <input type="text" value="My mum's 50th birthday">
+                    </div>
+                    <div class="form_group">
+                        <textarea rows="10" cols="100" class="form-control">we ate some cake and drank red wine!</textarea>
+                    </div>
+                    <div class="button_group">
+                        <button class="btn btn-blue">Edit &amp; Save Changes</button>
+                        <a class="btn btn-outline-blue" href="./dashboard.html">New Entry</a>
+                    </div>
+                </form>
+            </div>
+            <div class="single_entry--footer">
+                <a href="./dashboard.html">
+                    <i class="fa fa-long-arrow-alt-left"></i>&nbsp;Back</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MyDiary - A daily journal just for you!</title>
+    <!-- css stylesheet -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="./assets/css/pre-styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="fixed-top">
+        <a href="./index.html">MyDiary</a>
+        <a class="btn btn-outline-blue" href="./index.html">Logout</a>
+    </nav>
+    <div id="wrapper">
+        <div class="main-item menu" id="menu" onclick="openNav()">
+            <span class="line line01"></span>
+            <span class="line line02"></span>
+            <span class="line line03"></span>
+        </div>
+    </div>
+    <div id="mySidenav" class="tab sidenav">
+        <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#" onclick="openTab(event, 'profile')" class="tablink">Profile</a>
+        <a href="#" onclick="openTab(event, 'newEntry')" class="tablink">New Entry</a>
+        <a href="#" onclick="openTab(event, 'allEntries')" class="tablink">All Entries</a>
+        <a href="#" onclick="openTab(event, 'editProfile')" class="tablink">Edit Profile</a>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+    </div>
+    <section class="dash-section">
+        <div class="tab hide-mobile">
+            <button class="tablink" onclick="openTab(event, 'profile')" id="defaultOpen">Profile</button>
+            <button class="tablink" onclick="openTab(event, 'newEntry')">New Entry</button>
+            <button class="tablink" onclick="openTab(event, 'allEntries')">All Entries</button>
+            <button class="tablink" onclick="openTab(event, 'editProfile')">Edit Profile</button>
+        </div>
+
+        <div id="profile" class="tabcontent">
+            <h3>Your Diary at a glance...</h3>
+
+            <div class="profile_card">
+                <div class="white_card">
+                    <i class="fa fa-book fa-2x"></i>
+                    <div>
+                        <p>Total Entries</p>
+                        <span>20</span>
+                    </div>
+                </div>
+                <div class="white_card">
+                    <i class="fa fa-pen fa-2x"></i>
+                    <div>
+                        <p>Today's Entries</p>
+                        <span>1</span>
+                    </div>
+                </div>
+                <div class="white_card">
+                    <i class="fa fa-bookmark fa-2x"></i>
+                    <div>
+                        <p>Saved Entries</p>
+                        <span>10</span>
+                    </div>
+                </div>
+                <div class="white_card">
+                    <i class="fa fa-trash-alt fa-2x"></i>
+                    <div>
+                        <p>Deleted Entries</p>
+                        <span>10</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="new-entry btn btn-blue btn-lg" id="entryModalBtn">
+                <i class="fa fa-plus"></i>New Entry
+            </button>
+
+            <div class="entry_table">
+                <h3>Recent entries</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Entry</th>
+                            <th>Date Created</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>My mum's 50th birthday</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bought my first car</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rode a bike on third mainland bridge</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Traveled to italy</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div id="newEntry" class="tabcontent">
+            <h3>Tell Diary About Today</h3>
+            <form class="edit_form">
+                <div class="form_group">
+                    <div class="form_group">
+                        <label>Entry Date</label>
+                        <input type="date">
+                    </div>
+                    <label>Entry Title</label>
+                    <input type="text" placeholder="Entry Title">
+                </div>
+                <div class="form_group">
+                    <label>Entry Body</label>
+                    <textarea rows="10" cols="100" class="form-control"></textarea>
+                </div>
+                <button class="btn btn-blue">Add Entry</button>
+            </form>
+        </div>
+
+        <div id="allEntries" class="tabcontent">
+            <h3>Hi Phoenix, You have 8 total entries</h3>
+            <div class="entry_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Entry</th>
+                            <th>Date Created</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>My mum's 50th birthday</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bought my first car</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rode a bike on third mainland bridge</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Traveled to italy</td>
+                            <td>11-07-2017 at 9:00pm</td>
+                            <td class="actions">
+                                <a href="./single-entry.html">View</a>&nbsp;|
+                                <a href="#">Edit</a>&nbsp;|
+                                <a href="#">Delete</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <div id="editProfile" class="tabcontent">
+            <h3>Edit Your Profile</h3>
+            <form class="edit_form">
+                <div class="form_group">
+                    <label>Username</label>
+                    <input type="text" value="Phoenix" required>
+                </div>
+
+                <div class="form_group">
+                    <label>Email</label>
+                    <input type="email" value="phoenix@mydiary.com" required>
+                </div>
+
+                <button type="submit" class="btn btn-blue">Save Changes</button>
+            </form>
+        </div>
+
+    </section>
+
+    <!-- New Entry Modal -->
+    <div id="entryModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h3>Tell Diary About Today</h3>
+            </div>
+            <div class="modal-body">
+                <form class="edit_form">
+                    <div class="form_group">
+                        <label>Entry Date</label>
+                        <input type="date">
+                    </div>
+                    <div class="form_group">
+                        <label>Entry Title</label>
+                        <input type="text" placeholder="Entry Title">
+                    </div>
+                    <div class="form_group">
+                        <label>Entry Body</label>
+                        <textarea rows="10" cols="100" class="form-control"></textarea>
+                    </div>
+                    <button class="btn btn-blue">Add Entry</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/tab.js"></script>
+    <script src="./assets/js/modal.js"></script>
+</body>
+
+</html>
