@@ -10,55 +10,55 @@ const entries = [
   new Entry(4, 'My first bicycle', 'Your fave does not have a bike as cool as mine'),
 ];
 
-appRouter.get('/', (req, res) => res.send('Welcome to MyDiary API End Points!'));
+appRouter.get('/', (request, response) => response.send('Welcome to MyDiary API End Points!'));
 
-appRouter.get('/api/v1/entries', (req, res) => res.status(200).json({
+appRouter.get('/api/v1/entries', (request, response) => response.status(200).json({
   success: 'success', message: 'Query successful', entry: entries,
 }));
 
-appRouter.get('/api/v1/entries/:id', (req, res) => {
-  const entryToGet = entries.find(e => e.id === parseInt(req.params.id, 10));
+appRouter.get('/api/v1/entries/:id', (request, response) => {
+  const entryToGet = entries.find(e => e.id === parseInt(request.params.id, 10));
   if (!entryToGet || entryToGet === undefined) {
-    return res.status(404).json({
-      error: 'The entry you requested for must have been removed or have not been created',
+    return response.status(404).json({
+      error: 'The entry you requestuested for must have been removed or have not been created',
     });
   }
-  res.status(200).json({ success: 'success', entry: entryToGet });
+  response.status(200).json({ success: 'success', entry: entryToGet });
 });
 
-appRouter.post('/api/v1/entries', (req, res) => {
-  if (!req.body.title) return res.status(400).json({ error: 'title must be present' })
-  if (!req.body.body) return res.status(400).json({ error: 'body must be present' })
+appRouter.post('/api/v1/entries', (request, response) => {
+  if (!request.body.title) return response.status(400).json({ error: 'title must be presponseent' })
+  if (!request.body.body) return response.status(400).json({ error: 'body must be presponseent' })
 
-  const entryToCreate = new Entry(entries.length + 1, req.body.title, req.body.body);
+  const entryToCreate = new Entry(entries.length + 1, request.body.title, request.body.body);
   entries.push(entryToCreate);
-  res.status(200).json({ success: 'success', entries });
+  response.status(200).json({ success: 'success', entries });
 });
 
-appRouter.put('/api/v1/entries/:id', (req, res) => {
-  const entryToUpdate = entries.find(e => e.id === parseInt(req.params.id, 10));
+appRouter.put('/api/v1/entries/:id', (request, response) => {
+  const entryToUpdate = entries.find(e => e.id === parseInt(request.params.id, 10));
   if (!entryToUpdate || entryToUpdate === undefined) {
-    return res.status(404).json({
+    return response.status(404).json({
       error: 'The entry you want to edit does not exit',
     });
   }
 
-  entryToUpdate.title = req.body.title;
-  entryToUpdate.body = req.body.body;
+  entryToUpdate.title = request.body.title;
+  entryToUpdate.body = request.body.body;
 
-  res.status(200).json({ success: 'success', entry: entryToUpdate });
+  response.status(200).json({ success: 'success', entry: entryToUpdate });
 });
 
-appRouter.delete('/api/v1/entries/:id', (req, res) => {
-  const entryToDelete = entries.find(e => e.id === parseInt(req.params.id, 10));
+appRouter.delete('/api/v1/entries/:id', (request, response) => {
+  const entryToDelete = entries.find(e => e.id === parseInt(request.params.id, 10));
   if (!entryToDelete || entryToDelete === undefined) {
-    return res.status(404).json({
+    return response.status(404).json({
       error: 'The entry you want to delete does not exit',
     });
   }
 
   entries.pop(entryToDelete);
-  res.status(200).json({
+  response.status(200).json({
     success: 'successfully deleted', entries,
   });
 });
