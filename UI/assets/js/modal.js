@@ -1,17 +1,17 @@
-let modal = document.getElementById('entryModal');
-let btn = document.getElementById("entryModalBtn");
-let span = document.getElementsByClassName("close")[0];
+const modal = document.getElementById('entryModal');
+const btn = document.getElementById('entryModalBtn');
+const span = document.getElementsByClassName('close')[0];
 
-btn.onclick = function () {
-    modal.style.display = "block";
+btn.onclick = () => {
+  modal.style.display = 'block';
 }
 
-span.onclick = function () {
-    modal.style.display = "none";
+span.onclick = () => {
+  modal.style.display = 'none';
 }
 
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+window.onclick = (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
 }
