@@ -1,7 +1,6 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../index';
-import EntryController from '../server/routes';
 import Entry from '../server/entry';
 
 chai.use(chaiHttp);
